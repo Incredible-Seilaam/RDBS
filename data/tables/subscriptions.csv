@@ -1,0 +1,4 @@
+id, plan, start_date, end_date, price, original_price
+1,Basic,2024-01-01,2024-12-31,9.99,9.99
+2,Premium,2024-01-01,2024-12-31,19.99,19.99
+3,Ultimate,2024-01-01,2024-12-31,29.99,29.99

@@ -1,0 +1,361 @@
+id, user_id, name, description
+1,97,Morning Motivation,A playlist to kickstart your morning
+2,97,Evening Relaxation,Songs to wind down your evening
+3,98,Workout Hits,High energy songs for your workout
+4,98,Chill Vibes,Relax and unwind with these tunes
+5,99,Party Time,Get the party started with these tracks
+6,99,Study Session,Focus with these background beats
+7,100,Road Trip,Perfect songs for a long drive
+8,100,Love Songs,Romantic tunes for a special someone
+9,101,Throwback,Nostalgic hits from the past
+10,101,Top Hits,The most popular songs right now
+11,102,Indie Mix,The best of indie music
+12,102,Hip-Hop Beats,Latest and greatest in hip-hop
+13,103,Country Classics,Timeless country hits
+14,103,Jazz Nights,Smooth jazz for the evening
+15,104,Classical Essentials,Essential classical music pieces
+16,104,Electronic Grooves,Pumping electronic tracks
+17,105,R&B Favorites,Top R&B tracks
+18,105,Rock Anthems,Iconic rock songs
+19,106,Summer Vibes,Feel-good summer hits
+20,106,Metal Mayhem,Heavy metal tracks
+21,107,Relax & Unwind,Calming songs for relaxation
+22,107,Acoustic Sessions,Stripped down acoustic tracks
+23,108,Pop Perfection,Catchy pop tunes
+24,108,Reggae Rhythms,Laid-back reggae music
+25,109,Blues Legends,Legendary blues tracks
+26,109,Alternative Hits,Alternative rock and pop hits
+27,110,Workout Mix,Energetic songs to power your workout
+28,110,Festival Anthems,Songs you hear at festivals
+29,111,Latin Grooves,Popular Latin music
+30,111,Folk Favorites,Top folk tracks
+31,112,Holiday Cheer,Festive holiday music
+32,112,Instrumental Focus,Instrumental songs for concentration
+33,113,Punk Rock,High-energy punk rock tracks
+34,113,Soul Classics,Classic soul music
+35,114,Dance Party,Upbeat dance tracks
+36,114,Easy Listening,Relaxed and easy listening songs
+37,115,K-Pop Hits,Popular K-Pop tracks
+38,115,70s Classics,Hits from the 70s
+39,116,80s Hits,Hits from the 80s
+40,116,90s Jams,Hits from the 90s
+41,117,2000s Favorites,Hits from the 2000s
+42,117,Morning Chill,Chill tunes to start your day
+43,118,Evening Relaxation,Songs to wind down your evening
+44,118,Upbeat Pop,Feel-good pop music
+45,119,Smooth R&B,Smooth R&B tracks
+46,119,Live Performances,Great live music performances
+47,120,Indie Pop,Best of indie pop
+48,120,Morning Motivation,A playlist to kickstart your morning
+49,121,Evening Relaxation,Songs to wind down your evening
+50,121,Workout Hits,High energy songs for your workout
+51,122,Chill Vibes,Relax and unwind with these tunes
+52,122,Party Time,Get the party started with these tracks
+53,123,Study Session,Focus with these background beats
+54,123,Road Trip,Perfect songs for a long drive
+55,124,Love Songs,Romantic tunes for a special someone
+56,124,Throwback,Nostalgic hits from the past
+57,125,Top Hits,The most popular songs right now
+58,125,Indie Mix,The best of indie music
+59,126,Hip-Hop Beats,Latest and greatest in hip-hop
+60,126,Country Classics,Timeless country hits
+61,127,Jazz Nights,Smooth jazz for the evening
+62,127,Classical Essentials,Essential classical music pieces
+63,127,Electronic Grooves,Pumping electronic tracks
+64,128,R&B Favorites,Top R&B tracks
+65,128,Rock Anthems,Iconic rock songs
+66,128,Summer Vibes,Feel-good summer hits
+67,129,Metal Mayhem,Heavy metal tracks
+68,129,Relax & Unwind,Calming songs for relaxation
+69,129,Acoustic Sessions,Stripped down acoustic tracks
+70,130,Pop Perfection,Catchy pop tunes
+71,130,Reggae Rhythms,Laid-back reggae music
+72,130,Blues Legends,Legendary blues tracks
+73,131,Alternative Hits,Alternative rock and pop hits
+74,131,Workout Mix,Energetic songs to power your workout
+75,131,Festival Anthems,Songs you hear at festivals
+76,132,Latin Grooves,Popular Latin music
+77,132,Folk Favorites,Top folk tracks
+78,132,Holiday Cheer,Festive holiday music
+79,133,Instrumental Focus,Instrumental songs for concentration
+80,133,Punk Rock,High-energy punk rock tracks
+81,133,Soul Classics,Classic soul music
+82,134,Dance Party,Upbeat dance tracks
+83,134,Easy Listening,Relaxed and easy listening songs
+84,134,K-Pop Hits,Popular K-Pop tracks
+85,135,70s Classics,Hits from the 70s
+86,135,80s Hits,Hits from the 80s
+87,135,90s Jams,Hits from the 90s
+88,136,2000s Favorites,Hits from the 2000s
+89,136,Morning Chill,Chill tunes to start your day
+90,136,Evening Relaxation,Songs to wind down your evening
+91,137,Upbeat Pop,Feel-good pop music
+92,137,Smooth R&B,Smooth R&B tracks
+93,137,Live Performances,Great live music performances
+94,138,Indie Pop,Best of indie pop
+95,138,Morning Motivation,A playlist to kickstart your morning
+96,138,Evening Relaxation,Songs to wind down your evening
+97,139,Workout Hits,High energy songs for your workout
+98,139,Chill Vibes,Relax and unwind with these tunes
+99,139,Party Time,Get the party started with these tracks
+100,140,Study Session,Focus with these background beats
+101,140,Road Trip,Perfect songs for a long drive
+102,140,Love Songs,Romantic tunes for a special someone
+103,141,Throwback,Nostalgic hits from the past
+104,141,Top Hits,The most popular songs right now
+105,141,Indie Mix,The best of indie music
+106,142,Hip-Hop Beats,Latest and greatest in hip-hop
+107,142,Country Classics,Timeless country hits
+108,142,Jazz Nights,Smooth jazz for the evening
+109,143,Classical Essentials,Essential classical music pieces
+110,143,Electronic Grooves,Pumping electronic tracks
+111,143,R&B Favorites,Top R&B tracks
+112,144,Rock Anthems,Iconic rock songs
+113,144,Summer Vibes,Feel-good summer hits
+114,144,Metal Mayhem,Heavy metal tracks
+115,145,Relax & Unwind,Calming songs for relaxation
+116,145,Acoustic Sessions,Stripped down acoustic tracks
+117,145,Pop Perfection,Catchy pop tunes
+118,146,Reggae Rhythms,Laid-back reggae music
+119,146,Blues Legends,Legendary blues tracks
+120,146,Alternative Hits,Alternative rock and pop hits
+121,97,Playlist 1,Description for Playlist 1
+122,97,Playlist 2,Description for Playlist 2
+123,98,Playlist 1,Description for Playlist 1
+124,98,Playlist 2,Description for Playlist 2
+125,99,Playlist 1,Description for Playlist 1
+126,99,Playlist 2,Description for Playlist 2
+127,100,Playlist 1,Description for Playlist 1
+128,100,Playlist 2,Description for Playlist 2
+129,101,Playlist 1,Description for Playlist 1
+130,101,Playlist 2,Description for Playlist 2
+131,102,Playlist 1,Description for Playlist 1
+132,102,Playlist 2,Description for Playlist 2
+133,103,Playlist 1,Description for Playlist 1
+134,103,Playlist 2,Description for Playlist 2
+135,104,Playlist 1,Description for Playlist 1
+136,104,Playlist 2,Description for Playlist 2
+137,105,Playlist 1,Description for Playlist 1
+138,105,Playlist 2,Description for Playlist 2
+139,106,Playlist 1,Description for Playlist 1
+140,106,Playlist 2,Description for Playlist 2
+141,107,Playlist 1,Description for Playlist 1
+142,107,Playlist 2,Description for Playlist 2
+143,108,Playlist 1,Description for Playlist 1
+144,108,Playlist 2,Description for Playlist 2
+145,109,Playlist 1,Description for Playlist 1
+146,109,Playlist 2,Description for Playlist 2
+147,110,Playlist 1,Description for Playlist 1
+148,110,Playlist 2,Description for Playlist 2
+149,111,Playlist 1,Description for Playlist 1
+150,111,Playlist 2,Description for Playlist 2
+151,112,Playlist 1,Description for Playlist 1
+152,112,Playlist 2,Description for Playlist 2
+153,113,Playlist 1,Description for Playlist 1
+154,113,Playlist 2,Description for Playlist 2
+155,114,Playlist 1,Description for Playlist 1
+156,114,Playlist 2,Description for Playlist 2
+157,115,Playlist 1,Description for Playlist 1
+158,115,Playlist 2,Description for Playlist 2
+159,116,Playlist 1,Description for Playlist 1
+160,116,Playlist 2,Description for Playlist 2
+161,117,Playlist 1,Description for Playlist 1
+162,117,Playlist 2,Description for Playlist 2
+163,118,Playlist 1,Description for Playlist 1
+164,118,Playlist 2,Description for Playlist 2
+165,119,Playlist 1,Description for Playlist 1
+166,119,Playlist 2,Description for Playlist 2
+167,120,Playlist 1,Description for Playlist 1
+168,120,Playlist 2,Description for Playlist 2
+169,121,Playlist 1,Description for Playlist 1
+170,121,Playlist 2,Description for Playlist 2
+171,122,Playlist 1,Description for Playlist 1
+172,122,Playlist 2,Description for Playlist 2
+173,123,Playlist 1,Description for Playlist 1
+174,123,Playlist 2,Description for Playlist 2
+175,124,Playlist 1,Description for Playlist 1
+176,124,Playlist 2,Description for Playlist 2
+177,125,Playlist 1,Description for Playlist 1
+178,125,Playlist 2,Description for Playlist 2
+179,126,Playlist 1,Description for Playlist 1
+180,126,Playlist 2,Description for Playlist 2
+181,127,Playlist 1,Description for Playlist 1
+182,127,Playlist 2,Description for Playlist 2
+183,127,Playlist 3,Description for Playlist 3
+184,128,Playlist 1,Description for Playlist 1
+185,128,Playlist 2,Description for Playlist 2
+186,128,Playlist 3,Description for Playlist 3
+187,129,Playlist 1,Description for Playlist 1
+188,129,Playlist 2,Description for Playlist 2
+189,129,Playlist 3,Description for Playlist 3
+190,130,Playlist 1,Description for Playlist 1
+191,130,Playlist 2,Description for Playlist 2
+192,130,Playlist 3,Description for Playlist 3
+193,131,Playlist 1,Description for Playlist 1
+194,131,Playlist 2,Description for Playlist 2
+195,131,Playlist 3,Description for Playlist 3
+196,132,Playlist 1,Description for Playlist 1
+197,132,Playlist 2,Description for Playlist 2
+198,132,Playlist 3,Description for Playlist 3
+199,133,Playlist 1,Description for Playlist 1
+200,133,Playlist 2,Description for Playlist 2
+201,133,Playlist 3,Description for Playlist 3
+202,134,Playlist 1,Description for Playlist 1
+203,134,Playlist 2,Description for Playlist 2
+204,134,Playlist 3,Description for Playlist 3
+205,135,Playlist 1,Description for Playlist 1
+206,135,Playlist 2,Description for Playlist 2
+207,135,Playlist 3,Description for Playlist 3
+208,136,Playlist 1,Description for Playlist 1
+209,136,Playlist 2,Description for Playlist 2
+210,136,Playlist 3,Description for Playlist 3
+211,137,Playlist 1,Description for Playlist 1
+212,137,Playlist 2,Description for Playlist 2
+213,137,Playlist 3,Description for Playlist 3
+214,138,Playlist 1,Description for Playlist 1
+215,138,Playlist 2,Description for Playlist 2
+216,138,Playlist 3,Description for Playlist 3
+217,139,Playlist 1,Description for Playlist 1
+218,139,Playlist 2,Description for Playlist 2
+219,139,Playlist 3,Description for Playlist 3
+220,140,Playlist 1,Description for Playlist 1
+221,140,Playlist 2,Description for Playlist 2
+222,140,Playlist 3,Description for Playlist 3
+223,141,Playlist 1,Description for Playlist 1
+224,141,Playlist 2,Description for Playlist 2
+225,141,Playlist 3,Description for Playlist 3
+226,142,Playlist 1,Description for Playlist 1
+227,142,Playlist 2,Description for Playlist 2
+228,142,Playlist 3,Description for Playlist 3
+229,143,Playlist 1,Description for Playlist 1
+230,143,Playlist 2,Description for Playlist 2
+231,143,Playlist 3,Description for Playlist 3
+232,144,Playlist 1,Description for Playlist 1
+233,144,Playlist 2,Description for Playlist 2
+234,144,Playlist 3,Description for Playlist 3
+235,145,Playlist 1,Description for Playlist 1
+236,145,Playlist 2,Description for Playlist 2
+237,145,Playlist 3,Description for Playlist 3
+238,146,Playlist 1,Description for Playlist 1
+239,146,Playlist 2,Description for Playlist 2
+240,146,Playlist 3,Description for Playlist 3
+241,97,Playlist 1,Description for Playlist 1
+242,97,Playlist 2,Description for Playlist 2
+243,98,Playlist 1,Description for Playlist 1
+244,98,Playlist 2,Description for Playlist 2
+245,99,Playlist 1,Description for Playlist 1
+246,99,Playlist 2,Description for Playlist 2
+247,100,Playlist 1,Description for Playlist 1
+248,100,Playlist 2,Description for Playlist 2
+249,101,Playlist 1,Description for Playlist 1
+250,101,Playlist 2,Description for Playlist 2
+251,102,Playlist 1,Description for Playlist 1
+252,102,Playlist 2,Description for Playlist 2
+253,103,Playlist 1,Description for Playlist 1
+254,103,Playlist 2,Description for Playlist 2
+255,104,Playlist 1,Description for Playlist 1
+256,104,Playlist 2,Description for Playlist 2
+257,105,Playlist 1,Description for Playlist 1
+258,105,Playlist 2,Description for Playlist 2
+259,106,Playlist 1,Description for Playlist 1
+260,106,Playlist 2,Description for Playlist 2
+261,107,Playlist 1,Description for Playlist 1
+262,107,Playlist 2,Description for Playlist 2
+263,108,Playlist 1,Description for Playlist 1
+264,108,Playlist 2,Description for Playlist 2
+265,109,Playlist 1,Description for Playlist 1
+266,109,Playlist 2,Description for Playlist 2
+267,110,Playlist 1,Description for Playlist 1
+268,110,Playlist 2,Description for Playlist 2
+269,111,Playlist 1,Description for Playlist 1
+270,111,Playlist 2,Description for Playlist 2
+271,112,Playlist 1,Description for Playlist 1
+272,112,Playlist 2,Description for Playlist 2
+273,113,Playlist 1,Description for Playlist 1
+274,113,Playlist 2,Description for Playlist 2
+275,114,Playlist 1,Description for Playlist 1
+276,114,Playlist 2,Description for Playlist 2
+277,115,Playlist 1,Description for Playlist 1
+278,115,Playlist 2,Description for Playlist 2
+279,116,Playlist 1,Description for Playlist 1
+280,116,Playlist 2,Description for Playlist 2
+281,117,Playlist 1,Description for Playlist 1
+282,117,Playlist 2,Description for Playlist 2
+283,118,Playlist 1,Description for Playlist 1
+284,118,Playlist 2,Description for Playlist 2
+285,119,Playlist 1,Description for Playlist 1
+286,119,Playlist 2,Description for Playlist 2
+287,120,Playlist 1,Description for Playlist 1
+288,120,Playlist 2,Description for Playlist 2
+289,121,Playlist 1,Description for Playlist 1
+290,121,Playlist 2,Description for Playlist 2
+291,122,Playlist 1,Description for Playlist 1
+292,122,Playlist 2,Description for Playlist 2
+293,123,Playlist 1,Description for Playlist 1
+294,123,Playlist 2,Description for Playlist 2
+295,124,Playlist 1,Description for Playlist 1
+296,124,Playlist 2,Description for Playlist 2
+297,125,Playlist 1,Description for Playlist 1
+298,125,Playlist 2,Description for Playlist 2
+299,126,Playlist 1,Description for Playlist 1
+300,126,Playlist 2,Description for Playlist 2
+301,127,Playlist 1,Description for Playlist 1
+302,127,Playlist 2,Description for Playlist 2
+303,127,Playlist 3,Description for Playlist 3
+304,128,Playlist 1,Description for Playlist 1
+305,128,Playlist 2,Description for Playlist 2
+306,128,Playlist 3,Description for Playlist 3
+307,129,Playlist 1,Description for Playlist 1
+308,129,Playlist 2,Description for Playlist 2
+309,129,Playlist 3,Description for Playlist 3
+310,130,Playlist 1,Description for Playlist 1
+311,130,Playlist 2,Description for Playlist 2
+312,130,Playlist 3,Description for Playlist 3
+313,131,Playlist 1,Description for Playlist 1
+314,131,Playlist 2,Description for Playlist 2
+315,131,Playlist 3,Description for Playlist 3
+316,132,Playlist 1,Description for Playlist 1
+317,132,Playlist 2,Description for Playlist 2
+318,132,Playlist 3,Description for Playlist 3
+319,133,Playlist 1,Description for Playlist 1
+320,133,Playlist 2,Description for Playlist 2
+321,133,Playlist 3,Description for Playlist 3
+322,134,Playlist 1,Description for Playlist 1
+323,134,Playlist 2,Description for Playlist 2
+324,134,Playlist 3,Description for Playlist 3
+325,135,Playlist 1,Description for Playlist 1
+326,135,Playlist 2,Description for Playlist 2
+327,135,Playlist 3,Description for Playlist 3
+328,136,Playlist 1,Description for Playlist 1
+329,136,Playlist 2,Description for Playlist 2
+330,136,Playlist 3,Description for Playlist 3
+331,137,Playlist 1,Description for Playlist 1
+332,137,Playlist 2,Description for Playlist 2
+333,137,Playlist 3,Description for Playlist 3
+334,138,Playlist 1,Description for Playlist 1
+335,138,Playlist 2,Description for Playlist 2
+336,138,Playlist 3,Description for Playlist 3
+337,139,Playlist 1,Description for Playlist 1
+338,139,Playlist 2,Description for Playlist 2
+339,139,Playlist 3,Description for Playlist 3
+340,140,Playlist 1,Description for Playlist 1
+341,140,Playlist 2,Description for Playlist 2
+342,140,Playlist 3,Description for Playlist 3
+343,141,Playlist 1,Description for Playlist 1
+344,141,Playlist 2,Description for Playlist 2
+345,141,Playlist 3,Description for Playlist 3
+346,142,Playlist 1,Description for Playlist 1
+347,142,Playlist 2,Description for Playlist 2
+348,142,Playlist 3,Description for Playlist 3
+349,143,Playlist 1,Description for Playlist 1
+350,143,Playlist 2,Description for Playlist 2
+351,143,Playlist 3,Description for Playlist 3
+352,144,Playlist 1,Description for Playlist 1
+353,144,Playlist 2,Description for Playlist 2
+354,144,Playlist 3,Description for Playlist 3
+355,145,Playlist 1,Description for Playlist 1
+356,145,Playlist 2,Description for Playlist 2
+357,145,Playlist 3,Description for Playlist 3
+358,146,Playlist 1,Description for Playlist 1
+359,146,Playlist 2,Description for Playlist 2
+360,146,Playlist 3,Description for Playlist 3
