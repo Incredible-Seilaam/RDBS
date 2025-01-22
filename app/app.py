@@ -23,7 +23,10 @@ class Song(db.Model):
 @app.route('/')
 def avg_song_duration():
     avg_duration = db.session.query(db.func.avg(Song.duration)).scalar()
-    return f"Prumerna delka pisni: {avg_duration} sekund"
+    if avg_duration is not None:
+        avg_duration = round(float(avg_duration), 2)  # zaokrouhlení na 2 desetinná místa
+    return render_template('avg_duration.html', average_duration=avg_duration)
+    # return f"Prumerna delka pisni: {avg_duration} sekund"
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001, debug=True)

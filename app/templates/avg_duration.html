@@ -37,7 +37,7 @@
     <div class="container">
         <h1>Music Library</h1>
         <p>
-            {% if average_duration %}
+            {% if average_duration is not none %}
                 The average song duration is: <span class="highlight">{{ average_duration }}</span> seconds.
             {% else %}
                 <span class="highlight">No data available</span> to calculate the average song duration.
