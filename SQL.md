@@ -6,11 +6,16 @@ Nutno vytvořit procedůry a triggery pod MASTER uživatelem, nefungují
 
 - Výpočet průměrného počtu záznamů na jednu tabulku (bez poddotazu):
     - dotaz spočítá průměrný počet záznamů ve všech tabulkách
-    - můžeme použít tabulku `pg_stat_user_tables` k získání statistik o počtu řádků
-    - `reltuples` je sloupec v tabulce `pg class`
-    - `BIGINT` "velký integer" zajišťuje správné zpracování
+    - `pg class` systémová tabulka obsahující metadata o tabulkách a indexech
+    - `pg_namespace` systémová tabulka obsahující seznam schémat v databázi
+    - k tabulce `pg class` se podle indexu připojí odpovídající název schématu
+    - filtr pro zobrazení pouze `běžných tabulek` ze schématu `public`
+    - `ANALZYE` příkaz pro aktualizaci statistik o tabulkách, který pomáhá optimalizovat dotazy
 ```sql
-SELECT AVG(reltuples::BIGINT) AS prum_poc_zaznam_tab
+ANALYZE;
+```
+```sql
+SELECT AVG(reltuples) AS prum_poc_zaznam_tab
 FROM pg_class c
 JOIN pg_namespace n ON c.relnamespace = n.oid
 WHERE n.nspname = 'public' AND c.relkind = 'r';
@@ -30,21 +35,23 @@ FROM "Songs" s
 JOIN "Ratings" r ON s.id = r.song_id
 GROUP BY s.id
 HAVING AVG(r.rating) > (
-  SELECT AVG(rating)
-  FROM "Ratings"
+    SELECT AVG(rating)
+    FROM "Ratings"
 )
 ORDER BY avg_rating ASC;
 ```
 
 - SELECT s analytickou funkcí a GROUP BY
     - dotaz spočítá celkový počet přehrání (`stream count`) pro každého uživatele a přidá pořadí podle tohoto počtu (pomocí analytické funkce `RANK`)
-    - pokud mají uživatelé stejné množství přehrání, dostanou stejný rank
+    - pokud mají uživatelé stejné množství přehrání, dostanou stejný rank, ale následující rank se nepřeskočí (1,2,2,3,4...)
+    - `LEFT JOIN` zajistí, že pokud uživatel nemá žádná přehrání, stále bude součástí výsledku (hodnoty z StreamingHistory budou NULL).
+    - `GROUP BY` seskupí záznamy podle uživatelů
 
 ```sql
 SELECT 
     u.username, 
     COUNT(sh.id) AS stream_count,
-    RANK() OVER (ORDER BY COUNT(sh.id) DESC) AS rank
+    DENSE_RANK() OVER (ORDER BY COUNT(sh.id) DESC) AS rank
 FROM "Users" u
 LEFT JOIN "StreamingHistory" sh ON u.id = sh.user_id
 GROUP BY u.id
@@ -53,8 +60,9 @@ ORDER BY stream_count DESC;
 
 ### VIEW
 
-- veací seznam **písní**, jejich interpretů, žánrů, data vydání a délky trvání
-    - pokud píseň nemá žánr, přiřadí se hodnota `Null` (v tomto případě to ale nikdy nenastane)
+- vrací seznam **písní**, jejich interpretů, žánrů, data vydání a délky trvání
+- `INNER JOIN` zajití, že budou vypsány pouze písně, které mají interpreta
+- `LEFT JOIN` přiřadí hodnotu `Null`, pokud píseň nemá žánr (v případě této databáze to nikdy nenastane)
 
 ```sql
 CREATE OR REPLACE VIEW song_details AS
@@ -82,23 +90,11 @@ CREATE UNIQUE INDEX idx_unique_email ON "Users" (email);
 INSERT INTO "Users" VALUES (96,'hhf','john.doe@example.com',1);
 ```
 
-- Fulltextový index
-    - užitečný pro textová vyhledávání
-
-```sql
-CREATE INDEX idx_fulltext_title ON "Songs" USING gin(to_tsvector('english', title));
-```
-
-- B-tree index (standardní index)
-    - užitečný pro rychlé vyhledávání a řazení na základě hodnot ve sloupci (např. při vyhledávání písní podle data vydání)
-
-```sql
-CREATE INDEX idx_release_date ON "Songs" (release_date);
-```
-
 ### FUNCTION
 
 - Průměrná délka písní v SEKUNDÁCH
+  - `$$` značí začátek a konec **těla** funkce
+  - `BEGIN` a `END` zančí **blok** fuknce
 
 ```sql
 CREATE OR REPLACE FUNCTION get_average_song_duration()
@@ -151,35 +147,35 @@ DECLARE
     subscription_cursor CURSOR FOR 
         SELECT id, price FROM "Subscriptions";
     
-    v_subscription_id INT;
-    v_subscription_price NUMERIC;
-    v_discount_percentage NUMERIC;
-    v_price_after_discount NUMERIC;
+    p_subscription_id INT;
+    p_subscription_price NUMERIC;
+    p_discount_percentage NUMERIC;
+    p_price_after_discount NUMERIC;
 BEGIN
     OPEN subscription_cursor;
     
     LOOP
-        FETCH subscription_cursor INTO v_subscription_id, v_subscription_price;
+        FETCH subscription_cursor INTO p_subscription_id, p_subscription_price;
         EXIT WHEN NOT FOUND;
 
-        v_discount_percentage := ROUND((RANDOM() * (50 - 5) + 5)::NUMERIC, 2);
+        p_discount_percentage := ROUND((RANDOM() * (50 - 5) + 5)::NUMERIC, 2);
 
-        v_price_after_discount := v_subscription_price * (1 - (v_discount_percentage / 100));
+        p_price_after_discount := p_subscription_price * (1 - (p_discount_percentage / 100));
 
         BEGIN
             INSERT INTO "SubscriptionDiscounts" 
                 (subscription_id, discount_percentage, price_before_discount, price_after_discount)
             VALUES 
-                (v_subscription_id, v_discount_percentage, v_subscription_price, v_price_after_discount);
+                (p_subscription_id, p_discount_percentage, p_subscription_price, p_price_after_discount);
 
-            IF (SELECT original_price FROM "Subscriptions" WHERE id = v_subscription_id) IS NULL THEN
+            IF (SELECT original_price FROM "Subscriptions" WHERE id = p_subscription_id) IS NULL THEN
                 UPDATE "Subscriptions"
-                SET original_price = v_subscription_price
-                WHERE id = v_subscription_id;
+                SET original_price = p_subscription_price
+                WHERE id = p_subscription_id;
             END IF;
         EXCEPTION
             WHEN OTHERS THEN
-                RAISE NOTICE 'Error inserting discount for subscription ID %', v_subscription_id;
+                RAISE NOTICE 'Error inserting discount for subscription ID %', p_subscription_id;
         END;
     END LOOP;
 
@@ -204,24 +200,24 @@ DECLARE
     revert_cursor CURSOR FOR 
         SELECT id, original_price FROM "Subscriptions" WHERE original_price IS NOT NULL;
     
-    v_subscription_id INT;
-    v_original_price NUMERIC;
+    p_subscription_id INT;
+    p_original_price NUMERIC;
 BEGIN
     OPEN revert_cursor;
 
     LOOP
-        FETCH revert_cursor INTO v_subscription_id, v_original_price;
+        FETCH revert_cursor INTO p_subscription_id, p_original_price;
         EXIT WHEN NOT FOUND;
 
         BEGIN
             UPDATE "Subscriptions"
-            SET price = v_original_price
-            WHERE id = v_subscription_id;
+            SET price = p_original_price
+            WHERE id = p_subscription_id;
 
-            RAISE NOTICE 'Reverted subscription ID % to original price %', v_subscription_id, v_original_price;
+            RAISE NOTICE 'Reverted subscription ID % to original price %', p_subscription_id, p_original_price;
         EXCEPTION
             WHEN OTHERS THEN
-                RAISE NOTICE 'Error reverting price for subscription ID %', v_subscription_id;
+                RAISE NOTICE 'Error reverting price for subscription ID %', p_subscription_id;
         END;
     END LOOP;
 
@@ -249,25 +245,25 @@ DECLARE
         SELECT subscription_id, price_after_discount FROM "SubscriptionDiscounts"
         WHERE id = NEW.id;
     
-    v_subscription_id INT;
-    v_price_after_discount NUMERIC;
+    p_subscription_id INT;
+    p_price_after_discount NUMERIC;
 BEGIN
     OPEN discount_cursor;
 
     LOOP
-        FETCH discount_cursor INTO v_subscription_id, v_price_after_discount;
+        FETCH discount_cursor INTO p_subscription_id, p_price_after_discount;
 
         EXIT WHEN NOT FOUND;
 
         BEGIN
             UPDATE "Subscriptions"
-            SET price = v_price_after_discount
-            WHERE id = v_subscription_id;
+            SET price = p_price_after_discount
+            WHERE id = p_subscription_id;
 
-            RAISE NOTICE 'Price updated for subscription ID % to %', v_subscription_id, v_price_after_discount;
+            RAISE NOTICE 'Price updated for subscription ID % to %', p_subscription_id, p_price_after_discount;
         EXCEPTION
             WHEN OTHERS THEN
-                RAISE NOTICE 'Error updating price for subscription ID %', v_subscription_id;
+                RAISE NOTICE 'Error updating price for subscription ID %', p_subscription_id;
         END;
     END LOOP;
 
