@@ -276,9 +276,14 @@ $$ LANGUAGE plpgsql;
 
 ```sql
 CREATE OR REPLACE TRIGGER update_subscription_price_trigger
-AFTER INSERT ON "SubscriptionDiscounts"
+AFTER INSERT OR UPDATE ON "SubscriptionDiscounts"
 FOR EACH ROW
 EXECUTE FUNCTION update_subscription_price_after_discount();
+```
+```sql
+UPDATE "SubscriptionDiscounts"
+SET discount_percentage = 30, price_after_discount = 70
+WHERE subscription_id = 1;
 ```
 
 ### TRANSACTION
