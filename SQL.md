@@ -302,8 +302,8 @@ DECLARE
 BEGIN
     SELECT EXISTS (
         SELECT 1
-        FROM "PlaylistSongs"
-        WHERE "PlaylistSongs".song_id = transfer_song_between_playlists.song_id 
+        FROM "PlaylistSongs" c
+        WHERE c.song_id = transfer_song_between_playlists.song_id 
           AND playlist_id = source_playlist_id
     ) INTO song_exists;
 
@@ -313,8 +313,8 @@ BEGIN
     END IF;
 
     BEGIN
-        DELETE FROM "PlaylistSongs"
-        WHERE "PlaylistSongs".song_id = transfer_song_between_playlists.song_id 
+        DELETE FROM "PlaylistSongs" c
+        WHERE c.song_id = transfer_song_between_playlists.song_id 
           AND playlist_id = source_playlist_id;
 
         INSERT INTO "PlaylistSongs" (playlist_id, song_id)
